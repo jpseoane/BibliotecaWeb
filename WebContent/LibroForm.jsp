@@ -8,12 +8,12 @@
 <body>
 	<center>
 		<h1>Administración de libros</h1>
-        <h2>
-        	<a href="nuevo">Agregar nuevo libro</a>
-        	&nbsp;&nbsp;&nbsp;
-        	<a href="listar">Listar todos los libros</a>
-        	
-        </h2>
+                <h2>
+                        <a href="nuevo">Agregar nuevo libro</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="listar">Listar todos los libros</a>
+
+                </h2>
 	</center>
     <div align="center">
 		<c:if test="${libro != null}">
