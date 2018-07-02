@@ -11,9 +11,8 @@ import java.util.List;
 
 /**
  * AbstractDAO.java
- * This DAO class provides CRUD database operations for the table book
- * in the database.
- * @author www.codejava.net
+ * La clase DAO provee todas las operaciones CRUD de la tabla libro in la Base de datos 
+ * @author GRUPO 5 UNLAM
  *
  */
 public class LibroDAO {
@@ -47,7 +46,7 @@ public class LibroDAO {
 	}
 	
 	public boolean ingresarLibro(Libro libro) throws SQLException {
-		String sql = "INSERT INTO book (title, author, price) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO libro (titulo, autor, precio) VALUES (?, ?, ?)";
 		connect();
 		
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
@@ -64,7 +63,7 @@ public class LibroDAO {
 	public List<Libro> listarLibros() throws SQLException {
 		List<Libro> listLibro = new ArrayList<>();
 		
-		String sql = "SELECT * FROM book";
+		String sql = "SELECT * FROM libro";
 		
 		connect();
 		
@@ -72,10 +71,10 @@ public class LibroDAO {
 		ResultSet resultSet = statement.executeQuery(sql);
 		
 		while (resultSet.next()) {
-			int id = resultSet.getInt("book_id");
-			String titulo = resultSet.getString("title");
-			String autor = resultSet.getString("author");
-			float precio = resultSet.getFloat("price");
+			int id = resultSet.getInt("libro_id");
+			String titulo = resultSet.getString("titulo");
+			String autor = resultSet.getString("autor");
+			float precio = resultSet.getFloat("precio");
 			
 			Libro libro = new Libro(id, titulo, autor, precio);
 			listLibro.add(libro);
@@ -90,7 +89,7 @@ public class LibroDAO {
 	}
 	
 	public boolean borrarLibro(Libro libro) throws SQLException {
-		String sql = "DELETE FROM book where book_id = ?";
+		String sql = "DELETE FROM libro where libro_id = ?";
 		
 		connect();
 		
@@ -104,8 +103,8 @@ public class LibroDAO {
 	}
 	
 	public boolean actualizarLibro(Libro libro) throws SQLException {
-		String sql = "UPDATE book SET title = ?, author = ?, price = ?";
-		sql += " WHERE book_id = ?";
+		String sql = "UPDATE libro SET titulo = ?, autor = ?, precio = ?";
+		sql += " WHERE libro_id = ?";
 		connect();
 		
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
@@ -121,12 +120,10 @@ public class LibroDAO {
 		disconnect();
 		return rowUpdated;		
 	}
-
-
 	
 	public Libro getLibro(int id) throws SQLException {
 		Libro libro = null;
-		String sql = "SELECT * FROM book WHERE book_id = ?";
+		String sql = "SELECT * FROM libro WHERE libro_id = ?";
 		
 		connect();
 		
@@ -136,9 +133,9 @@ public class LibroDAO {
 		ResultSet resultSet = statement.executeQuery();
 		
 		if (resultSet.next()) {
-			String titulo = resultSet.getString("title");
-			String autor = resultSet.getString("author");
-			float precio = resultSet.getFloat("price");
+			String titulo = resultSet.getString("titulo");
+			String autor = resultSet.getString("autor");
+			float precio = resultSet.getFloat("precio");
 			
 			libro = new Libro(id, titulo, autor, precio);
 		}                

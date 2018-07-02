@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * ControllerServlet.java
- * Este servlet actua como una pagina controladora para la aplicacion, en todos las peticiones y 
- * respuestas del usuario.
+/** 
+ * Pagina controladora para la aplicacion, en todos las peticiones y 
+ * respuestas del usuario relacionadas con el libro.
  * @author GRUPO 5 UNLAM 
  */
 public class ControllerServlet extends HttpServlet {
