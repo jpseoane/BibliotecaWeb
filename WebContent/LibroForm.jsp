@@ -39,26 +39,32 @@
             <tr>
                 <th>Titulo: </th>
                 <td>
-                	<input type="text" name="titulo" size="45" placeholder="Ingrese el titulo"
+                	<input type="text" name="titulo" size="45" placeholder="Ingrese el titulo" pattern="[A-Za-z0-9_-]{1,150}"
                 			value="<c:out value='${libro.titulo}' />"
                 	required />
+                        <br>
+                        <label style="color:#08298A ; font-size: smaller;">Solo numeros y letras hasta 150 caracteres</label>
                 </td>
             </tr>
             <tr>
                 <th>Autor: </th>
                 <td>
-                	<input type="text" name="autor" size="45"  placeholder="Ingrese el autor"
+                	<input type="text" name="autor" size="45"  placeholder="Ingrese el autor"  pattern="[A-Za-z0-9_-]{1,50}"
                 			value="<c:out value='${libro.autor}' />"
                 	required />
+                        <br>
+                        <label style="color: #08298A; font-size: smaller;">Solo numeros y letras hasta 50 caracteres</label>
                 </td>
             </tr>
             <tr>
                 <th>Precio: </th>
                 <td>
                     
-                	<input type="number" size="5" name="precio" placeholder="Ingrese el precio"
+                	<input type="text" size="5" name="precio" placeholder="Ingrese el precio" pattern="[0-9_.]{1,10}"
                 			value="<c:out value='${libro.precio}' />"
                 	required />
+                        <br>
+                        <label style="color: #08298A; font-size: smaller;">Solo numeros</label>
                 </td>
             </tr>
             <tr>
