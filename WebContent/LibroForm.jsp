@@ -39,7 +39,7 @@
             <tr>
                 <th>Titulo: </th>
                 <td>
-                	<input type="text" name="titulo" size="45" placeholder="Ingrese el titulo" pattern="[A-Za-z0-9_-]{1,150}"
+                	<input type="text" name="titulo" size="45" placeholder="Ingrese el titulo" pattern="[A-Za-z0-9_ ]{1,150}"
                 			value="<c:out value='${libro.titulo}' />"
                 	required />
                         <br>
@@ -49,7 +49,7 @@
             <tr>
                 <th>Autor: </th>
                 <td>
-                	<input type="text" name="autor" size="45"  placeholder="Ingrese el autor"  pattern="[A-Za-z0-9_-]{1,50}"
+                	<input type="text" name="autor" size="45"  placeholder="Ingrese el autor"  pattern="[A-Za-z0-9_ ]{1,50}"
                 			value="<c:out value='${libro.autor}' />"
                 	required />
                         <br>
