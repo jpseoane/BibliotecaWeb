@@ -3,7 +3,7 @@
     <display-name>Libreria Aplicación Web</display-name>
     <context-param>
         <param-name>jdbcURL</param-name>
-        <param-value>jdbc:mysql://localhost:3307/biblioteca</param-value>
+        <param-value>jdbc:mysql://localhost:3306/biblioteca</param-value>
     </context-param>
     <context-param>
         <param-name>jdbcUsername</param-name>

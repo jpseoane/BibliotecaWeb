@@ -12,7 +12,8 @@
                         <a href="nuevo">Agregar nuevo libro</a>
                         &nbsp;&nbsp;&nbsp;
                         <a href="listar">Listar todos los libros</a>
-
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="listarRevistas">Listar todas las revistas</a>
                 </h2>
 	</center>
     <div align="center">

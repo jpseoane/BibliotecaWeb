@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LibroDAO libroDAO;
+        private RevistaDAO revistaDAO;
         
         
         /**
@@ -29,6 +30,7 @@ public class ControllerServlet extends HttpServlet {
 		String jdbcPassword = getServletContext().getInitParameter("jdbcPassword");
 
 		libroDAO = new LibroDAO(jdbcURL, jdbcUsername, jdbcPassword);
+                revistaDAO = new RevistaDAO(jdbcURL, jdbcUsername, jdbcPassword);
 
 	}
 
@@ -58,6 +60,9 @@ public class ControllerServlet extends HttpServlet {
 			case "/actualizar":
 				actualizarLibro(request, response);
 				break;
+                        case "/listarRevistas":
+				listarRevistas(request, response);
+				break;
 			default:
 				listarLibros(request, response);
 				break;
@@ -75,6 +80,15 @@ public class ControllerServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarLibros.jsp");
 		dispatcher.forward(request, response);
 	}
+        private void listarRevistas(HttpServletRequest request, HttpServletResponse response)
+		throws SQLException, IOException, ServletException {
+                List<Revista> listaRevistas= revistaDAO.listarRevista();
+            
+                request.setAttribute("listaRevistas", listaRevistas);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ListarRevistas.jsp");
+		dispatcher.forward(request, response);
+	}
+
 
 	private void mostrarFormNuevo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
