@@ -34,8 +34,7 @@ public class LibroDAO {
 			} catch (ClassNotFoundException e) {
 				throw new SQLException(e);
 			}
-			jdbcConnection = DriverManager.getConnection(
-										jdbcURL, jdbcUsername, jdbcPassword);
+			jdbcConnection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		}
 	}
 	
@@ -112,10 +111,8 @@ public class LibroDAO {
 		statement.setString(2, libro.getAutor());
 		statement.setFloat(3, libro.getPrecio());
 		statement.setInt(4, libro.getId());
-                
-                	
 		
-		boolean rowUpdated = statement.executeUpdate() > 0;
+                boolean rowUpdated = statement.executeUpdate() > 0;
 		statement.close();
 		disconnect();
 		return rowUpdated;		
