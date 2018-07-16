@@ -6,12 +6,13 @@
 	<title>Aplicacion Biblioteca</title>
 </head>
 <body>
+    
 	<center>
 		<h1>Administración de libros</h1>
         <h2>
         	<a href="nuevo">Agregar nuevo Libro</a>
-        	&nbsp;&nbsp;&nbsp;
-        	<a href="listar">Listar libros</a>
+        	&nbsp;&nbsp;&nbsp;               
+                <a href="listarRevistas">Listar todas las revistas</a>
         </h2>
 	</center>
     <div align="center">
@@ -38,6 +39,7 @@
                 </tr>
             </c:forEach>
         </table>
-    </div>	
+    </div>
+       
 </body>
 </html>

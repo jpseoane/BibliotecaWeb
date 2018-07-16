@@ -20,6 +20,7 @@ public class RevistaDAO {
 	private String jdbcUsername;
 	private String jdbcPassword;
 	private Connection jdbcConnection;
+        private Libro libro;
 	
 	public RevistaDAO(String jdbcURL, String jdbcUsername, String jdbcPassword) {
 		this.jdbcURL = jdbcURL;
@@ -71,6 +72,25 @@ public class RevistaDAO {
 		
 		return listRevista;
 	}
+        
+        public boolean ingresarRevista(Revista revista, Libro libro) throws SQLException {
+		
+            libro = new Libro();
+            
+            String sql = "INSERT INTO Revista (titulo, autor, precio) VALUES (?, ?, ?)";
+		connect();
+		
+		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+		statement.setString(1, libro.getTitulo());
+		statement.setString(2, libro.getAutor());
+		statement.setFloat(3, libro.getPrecio());
+		
+		boolean rowInserted = statement.executeUpdate() > 0;
+		statement.close();
+		disconnect();
+		return rowInserted;
+	}
+        
 }
 
 

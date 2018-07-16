@@ -11,7 +11,8 @@
         <h2>
         	<a href="nuevo">Agregar nueva Revista</a>
         	&nbsp;&nbsp;&nbsp;
-        	<a href="listar">Listar Revistas</a>
+                <a href="listar">Listar libros</a>               
+        	
         </h2>
 	</center>
     <div align="center">
